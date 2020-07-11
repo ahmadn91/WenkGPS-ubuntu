@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="WENK_PRO" model="ir.ui.view">
+            <field name="name">WENK_PRO</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='probability']" position="after">
+                  
+                <label for="risk">Risk</label>
+                <field name="risk"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
