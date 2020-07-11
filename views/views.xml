@@ -6,11 +6,25 @@
             <field name="model">crm.lead</field>
             <field name="inherit_id" ref="crm.crm_lead_view_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='probability']" position="after">
-                  
-                <label for="risk">Risk</label>
-                <field name="risk"/>
+                <xpath expr="//div[@class='col']" position="inside">
+
+                    <label for="risk"/>
+                    <div id="risk" class="o_row d-flex">                     
+                        <field name="risk" class="oe_inline"/>                  
+                    </div>
                 </xpath>
+                <xpath expr="//page[@name='lead']" position='after'>
+                    <page  string="Competitor" >
+                        <group string="Competitor Information">
+                            <field name="competitor_field_1"/>
+                            <field name="competitor_field_2"/>
+                            <field name="competitor_field_3"/>
+                            <field name="competitor_field_4"/>
+                            <field name="competitor_field_5"/>
+                            <field name="competitor_field_6"/>
+                        </group>
+                    </page>
+	            </xpath>
             </field>
         </record>
 
