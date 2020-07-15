@@ -8,13 +8,14 @@
             <field name="arch" type="xml">
                 <xpath expr="//div[@class='col']" position="inside">
 
-                    <label for="risk"/>
-                    <div id="risk" class="o_row d-flex">                     
-                        <field name="risk" class="oe_inline"/>                  
+                    
+                    <div id="risk" class="o_row d-flex">  
+                        <label for="risk"/>                   
+                        <field name="risk" class="oe_inline" style="width:16%"/>                  
                     </div>
                 </xpath>
                 <xpath expr="//page[@name='lead']" position='after'>
-                    <page  string="Competitor" >
+                    <page  name="competitor" string="Competitor"  >
                         <group string="Competitor Information">
                             <field name="competitor_field_1"/>
                             <field name="competitor_field_2"/>
@@ -25,6 +26,21 @@
                         </group>
                     </page>
 	            </xpath>
+                <xpath expr="//page[@name='competitor']" position='after'>
+                    <page  name="financial_proposal" string="Financial Proposal"  >
+                        <group string="Financial Proposal Documents">
+                            <field name="financial_proposal"/>
+                        </group>
+                    </page>
+	            </xpath>
+                <xpath expr="//page[@name='financial_proposal']" position='after'>
+                    <page  name="technical_proposal" string="Technical Proposal"  >
+                        <group string="Technical Proposal Documents">
+                            <field name="technical_proposal"/>
+                        </group>
+                    </page>
+	            </xpath>
+                
             </field>
         </record>
 
