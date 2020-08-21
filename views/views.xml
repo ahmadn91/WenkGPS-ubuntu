@@ -7,42 +7,63 @@
             <field name="inherit_id" ref="crm.crm_lead_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//div[@class='col']" position="inside">
-
-                    
                     <div id="risk" class="o_row d-flex">  
                         <label for="risk"/>                   
                         <field name="risk" class="oe_inline" style="width:16%"/>                  
                     </div>
                 </xpath>
                 <xpath expr="//page[@name='lead']" position='after'>
-                    <page  name="competitor" string="Competitor"  >
+                    <page  name="competitor" string="Competitor">
                         <group string="Competitor Information">
-                            <field name="competitor_field_1"/>
-                            <field name="competitor_field_2"/>
-                            <field name="competitor_field_3"/>
-                            <field name="competitor_field_4"/>
-                            <field name="competitor_field_5"/>
-                            <field name="competitor_field_6"/>
+                            <field name="competitor_notes">
+                                <tree editable="top">
+                                    <field name="info_id"/>
+                                    <field name="content"/>
+                                    <field name="uploader" />
+                                    <field name="upload_date"/>
+                                </tree>
+                            </field>
                         </group>
                     </page>
 	            </xpath>
                 <xpath expr="//page[@name='competitor']" position='after'>
-                    <page  name="financial_proposal" string="Financial Proposal"  >
+                    <page  name="financial_proposal" string="Financial Proposal">
                         <group string="Financial Proposal Documents">
-                            <field name="financial_proposal"/>
+                            <field name="financial_doc">
+                                <tree editable="top">
+                                    <field name="name"/>
+                                    <field name="upload_date"/>
+                                    <field name="uploader" />
+                                    <field name="comment"/>
+                                    <field name="document"/>
+                                    <!-- <field name="notify"/> -->
+                                </tree>
+                            </field>
                         </group>
                     </page>
 	            </xpath>
                 <xpath expr="//page[@name='financial_proposal']" position='after'>
                     <page  name="technical_proposal" string="Technical Proposal"  >
                         <group string="Technical Proposal Documents">
-                            <field name="technical_proposal"/>
+                           <field name="technical_doc">
+                                <tree editable="top">
+                                    <field name="name"/>
+                                    <field name="upload_date"/>
+                                    <field name="uploader" />
+                                    <field name="comment"/>
+                                    <field name="document"/>
+                                </tree>
+                            </field>
                         </group>
                     </page>
 	            </xpath>
                 
             </field>
         </record>
+        
+
+
+
 
     </data>
 </odoo>
